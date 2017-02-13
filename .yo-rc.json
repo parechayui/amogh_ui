@@ -1,0 +1,12 @@
+{
+  "@propel/generator-jumpstart": {
+    "kind": "module",
+    "appname": "helloworld-ui",
+    "types": [
+      "ui",
+      "template",
+      "asset",
+      "configurable"
+    ]
+  }
+}

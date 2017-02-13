@@ -1,0 +1,22 @@
+{
+    "users":[
+    {
+        "api_key":"amo@gmail.com",
+        "first_name":"amo",
+        "last_name":"rc",
+        "phone":"12345"
+    },
+    {
+        "api_key":"rc@gmail.com",
+        "first_name":"rca",
+        "last_name":"rc",
+        "phone":"123456"
+    },
+    {
+        "api_key": "sri@gmail.com",
+        "first_name":"sri",
+        "last_name":"rc",
+        "phone":"1234567"
+    }
+    ]
+}
