@@ -1,67 +1,91 @@
 <!DOCTYPE html>
 <html lang="en-us" ng-app="sample-ui">
-    <head>
-        <title>AngularJS Sample Application</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <meta charset="UTF-10">
 
-        <!-- load bootstrap and fontawesome via CDN -->
-        <link rel="stylesheet" href="bootstrap.css" />
-        <script src="jquery-3.1.1.js"></script>
-        <script src="bootstrap.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.5/nv.d3.min.css'/>
-        <style>
-            html, body, input, select, textarea
-            {
-                font-size: 1.05em !important;
-            }
-        </style>
-        
-        <!-- load angular via CDN -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-resource.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/restangular/1.5.1/restangular.min.js"></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.js'></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.5/nv.d3.min.js"></script>
-        
-       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.9/angular-nvd3.min.js"></script>
-        <script src="app/helloworld.module.js"></script>
-        <script src="app/helloworld.routes.js"></script>
-        <script src='app/restAngular.js'></script>
-        <script src='app/home/HelloworldHomeCtrl.js'></script>
-        <script src='app/contact/HelloworldContactCtrl.js'></script>
- 
-        <script type="text/ng-template" id="main.html">
- <section>
+<head>
+  <title>AngularJS Sample Application</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-10">
+
+  <!-- load bootstrap and fontawesome via CDN -->
+  <link rel="stylesheet" href="bootstrap.css" />
+  <script src="jquery-3.1.1.js"></script>
+  <script src="bootstrap.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.5/nv.d3.min.css' />
+  <style>
+    #sec1 {
+      padding-left: 0px;
+    }
+    
+    #msg {
+      font-size: 500%;
+      text-align: center;
+    }
+    
+    #greet {
+      font-size: 300%;
+      text-align: center;
+    }
+    
+    #cLink {
+      text-align: center;
+      display: block;
+      font-size: 200%;
+    }
+    
+    #hme {
+      background-color: #32cd65;
+    }
+    
+    #grph2 {
+      text-align: center;
+    }
+  </style>
+
+  <!-- load angular via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-resource.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/restangular/1.5.1/restangular.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.5/nv.d3.min.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.9/angular-nvd3.min.js"></script>
+  <script src="app/sample.module.js"></script>
+  <script src="app/sample.routes.js"></script>
+  <script src='app/restAngular.js'></script>
+  <script src='app/home/sampleHomeCtrl.js'></script>
+  <script src='app/contact/sampleContactCtrl.js'></script>
+
+  <script type="text/ng-template" id="main.html">
+ <section id='hme' class='col-sm-10 col-sm-offset-1'>
   <div class="row">
     <div class="col-sm-12">
-      <h1>Hello {{home.user.name}}!</h1>
+      <h1 id='greet'>{{home.greet}}</h1>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
-      <h3>Where would you like to navigate to?</h3>
+      <h1 id='msg'>{{home.msg}}</h1>
     </div>
   </div>
   <br>
   <div class="row">
     <div class="col-sm-12">
-      <a ui-sref="contact">My Contact List</a>
+      <a id='cLink' ui-sref="contact">My Contact List</a>
     </div>
   </div>
 </section>
 
 </script>
-<script type="text/ng-template" id="contact-list.html" >
+  <script type="text/ng-template" id="contact-list.html">
 <section class='col-sm-10 col-sm-offset-1'>
   <form class="form-horizontal">
     <div class='row'>
       <div class="form-group">
-      <h1 class="col-sm-10" style="margin-left:0px">Create New Contact</h1>
+      <h1 class="col-sm-10">Create New Contact</h1>
       </div>
     </div>
   
@@ -78,8 +102,7 @@
           <label for="lastName" class="left inline">Last Name</label>
             <input type="text" class='form-control' id="lastName" placehoder="Last Name" ng-model="hello.lastName">
            </div>
-      
-      </div>
+        </div>
       <div class='form-group'>
         <div class="col-sm-8">
            <label for="email" class="left inline">E-Mail</label>
@@ -109,10 +132,10 @@
   </form>
 </section>
 
-<section class="col-sm-12" style='padding-left:0px'>
+<section id= 'sec1' class="col-sm-12">
   <div class="row">
     
-    <div class="col-sm-10 col-sm-push-1" style='margin-left:0px'>
+    <div class="col-sm-10 col-sm-push-1">
       <h1>My Contact List</h1>
     </div>
     
@@ -144,34 +167,37 @@
 </section>
 <nvd3 options="options" data="data" class="with-3d-shadow with-transitions"></nvd3>
 <nvd3 options="details" data="info" class="with-3d-shadow with-transitions"></nvd3>
+<h5 id='grph2'><b>Figure 2.</b> Graph showing the number of users in each area</h5>
 </script>
-<script type="text/ng-template" id="linegaph.html" >
+  <script type="text/ng-template" id="linegaph.html">
 
 </script>
 
-    
-    </head>
-    <body>
 
-        <header>
-			<nav class="navbar navbar-default">
-			<div class="container">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="/">AngularJS Sample</a>
-				</div>
+</head>
 
-				<ul class="nav navbar-nav navbar-right">
-					<li><a ui-sref="home"><i class="fa fa-home"></i>Home</a></li>
-                    <li><a ui-sref="contact"><i class="fa fa-info-circle"></i>Contacts</a></li>
-				</ul>
-			</div>
-		</header>
+<body>
 
-        <div>
-         
-            <ui-view></ui-view>
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">AngularJS Sample</a>
+        </div>
 
-		</div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a ui-sref="home">Home</a></li>
+          <li><a ui-sref="contact">Contacts</a></li>
+        </ul>
+      </div>
+  </header>
 
-    </body>
+  <div>
+
+    <ui-view></ui-view>
+
+  </div>
+
+</body>
+
 </html>
