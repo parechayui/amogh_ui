@@ -1,24 +1,7 @@
-// app.controller('linegraphCtrl', ['$scope', linegraphCtrl]);
+// app.controller('linegraphCtrl', ['$scope','contactSvc', linegraphCtrl]);
 
-// function linegraphCtrl($scope) {
-// vm.users = [{
-//         "email":"amo@gmail.com",
-//         "first_name":"amo",
-//         "last_name":"rc",
-//         "phone":"12345"
-//     },
-//     {
-//         "email":"rc@gmail.com",
-//         "first_name":"rca",
-//         "last_name":"rc",
-//         "phone":"123456"
-//     },
-//     {
-//         "email": "srim@gmail.com",
-//         "first_name":"sri",
-//         "last_name":"rc",
-//         "phone":"1234567"
-//     }]
+// function linegraphCtrl($scope, contactSvc) {
+// vm.users = contactSvc.getdata();
     
 //     var arrayNum = [];
 //     var modArray = [];

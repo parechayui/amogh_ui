@@ -92,7 +92,12 @@
              <input type="text" class='form-control' id="phone" placehoder="Phone" ng-model="hello.phone">
         </div>
     </div>
-      
+     <div class='form-group'>
+        <div class="col-sm-8">
+           <label for="email" class="left inline">Your E-Mail</label>
+           <input type="text"  class='form-control' id="email" placehoder=" Your E-Mail" ng-model="hello.api_key">
+        </div>
+      </div> 
       <div class="row">
         <div class="col-sm-10">
           <button type="button" class="btn btn-primary" ng-click="hello.save()">Create</button>
@@ -104,7 +109,7 @@
   </form>
 </section>
 
-<section ng-if="hello.hasContent" class="col-sm-12" style='padding-left:0px'>
+<section class="col-sm-12" style='padding-left:0px'>
   <div class="row">
     
     <div class="col-sm-10 col-sm-push-1" style='margin-left:0px'>
@@ -138,7 +143,12 @@
   </div>
 </section>
 <nvd3 options="options" data="data" class="with-3d-shadow with-transitions"></nvd3>
+<nvd3 options="details" data="info" class="with-3d-shadow with-transitions"></nvd3>
 </script>
+<script type="text/ng-template" id="linegaph.html" >
+
+</script>
+
     
     </head>
     <body>
