@@ -78,6 +78,23 @@ function sampleContactCtrl($resource, pocRestangularService, $scope) {
                     }
                 }
             }
+          
+          
+          
+          var finalObj={NJ:5,
+    AR:8};
+
+         var values=[];
+         for(var key in finalObj){
+             var myObj={};
+             myObj.label=key;
+             myObj.value=finalObj[key];
+             values.push(myObj);
+         }
+
+          
+          
+          
             //data for bar graph 
             $scope.info = [
                 {
